@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-hant">
+
+<head>
+
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <link href="index.css" rel="stylesheet">
+  <title>IBM力挺，全球最大區塊鏈聯盟Hyperledger會員突破122名</title>
+  <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
+
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDoeXb-dcU3KosXazg0tlFFhs7tvK5BxsI",
+      authDomain: "socialnetwork-aa36e.firebaseapp.com",
+      databaseURL: "https://socialnetwork-aa36e.firebaseio.com",
+      storageBucket: "socialnetwork-aa36e.appspot.com",
+      messagingSenderId: "949608262461"
+    };
+
+    firebase.initializeApp(config);
+  </script>
+
+  <script>
+    var storage = firebase.storage();
+    //console.log(storage);
+    var storageRef = firebase.storage().ref();
+
+    function uploadComment() {
+
+      var d = new Date();
+
+      var afuRef = storageRef.child('texts/secret-message-' + d + '.txt');
+
+      if (document.getElementById("name").value.length == 0) {
+        document.getElementById('name').placeholder = "請輸入名稱";
+        if (document.getElementById("commend").value.length == 0) {
+          document.getElementById('commend').placeholder = "請輸入留言";
+        }
+      }
+      else if (document.getElementById("commend").value.length == 0) {
+        document.getElementById('commend').placeholder = "請輸入留言";
+        if (document.getElementById("name").value.length == 0) {
+          document.getElementById('name').placeholder = "請輸入名稱";
+        }
+      }
+      else {
+        afuRef.putString(document.getElementById("name").value + "\n\n" + document.getElementById("commend").value).then(function (snapshot) {
+          console.log("上傳成功");
+          document.getElementById("name").value = "";
+          document.getElementById("commend").value = "";
+          document.getElementById('name').placeholder = "";
+          document.getElementById('commend').placeholder = "";
+        });
+      }
+    }
+  </script>
+
+  <script>
+    var storage = firebase.storage();
+    var storageRef = storage.ref();
+
+    var nccuRef = storageRef.child('images/我的政大.jpg');
+    var ibmRef = storageRef.child('images/ibm.jpg');
+    var dtcoRef = storageRef.child('images/DTCO.png');
+    var facebookRef = storageRef.child('images/facebook_like.png');
+    var ibmreRef = storageRef.child('images/IBM重新布局.png');
+    var kickRef = storageRef.child('images/Kickstarter.png');
+    var lineRef = storageRef.child('images/line.png');
+    var softRef = storageRef.child('images/SoftLayer.png');
+    var uberRef = storageRef.child('images/Uber.png');
+    var ecoRef = storageRef.child('images/經濟部雲端測試平.png');
+    var cloudRef = storageRef.child('images/雲端導入.png');
+    var boneRef = storageRef.child('images/骨牌效應.png');
+    var kaoRef = storageRef.child('images/高盛宣布退出.png');
+
+    // Once the sign in completed, we get the download URL of the image
+    nccuRef.getDownloadURL().then(function (url) {
+      // Once we have the download URL, we set it to our img element
+      //document.querySelector('img').src = url;
+      var mynccu = document.getElementById('mynccu');
+      mynccu.src = url;
+    }).catch(function (error) {
+      console.error(error);
+    });
+    // Once the sign in completed, we get the download URL of the image
+    ibmRef.getDownloadURL().then(function (url) {
+      // Once we have the download URL, we set it to our img element
+      //document.querySelector('img').src = url;
+      var ibm = document.getElementById('ibm');
+      ibm.src = url;
+    }).catch(function (error) {
+      console.error(error);
+    });
+    // Once the sign in completed, we get the download URL of the image
+    dtcoRef.getDownloadURL().then(function (url) {
+      // Once we have the download URL, we set it to our img element
+      //document.querySelector('img').src = url;
+      var dtco = document.getElementById('dtco');
+      dtco.src = url;
+    }).catch(function (error) {
+      console.error(error);
+    });
+    // Once the sign in completed, we get the download URL of the image
+    facebookRef.getDownloadURL().then(function (url) {
+      // Once we have the download URL, we set it to our img element
+      //document.querySelector('img').src = url;
+      var facebook = document.getElementById('facebook');
+      facebook.src = url;
+    }).catch(function (error) {
+      console.error(error);
+    });
+    // Once the sign in completed, we get the download URL of the image
+    ibmreRef.getDownloadURL().then(function (url) {
+      // Once we have the download URL, we set it to our img element
+      //document.querySelector('img').src = url;
+      var ibmre = document.getElementById('ibmre');
+      ibmre.src = url;
+
+    }).catch(function (error) {
+      console.error(error);
+    });
+    // Once the sign in completed, we get the download URL of the image
+    kickRef.getDownloadURL().then(function (url) {
+      // Once we have the download URL, we set it to our img element
+      //document.querySelector('img').src = url;
+      var kick = document.getElementById('kick');
+      kick.src = url;
+    }).catch(function (error) {
+      console.error(error);
+    });
+    // Once the sign in completed, we get the download URL of the image
+    lineRef.getDownloadURL().then(function (url) {
+      // Once we have the download URL, we set it to our img element
+      //document.querySelector('img').src = url;
+      var line = document.getElementById('line');
+      line.src = url;
+    }).catch(function (error) {
+      console.error(error);
+    });
+    // Once the sign in completed, we get the download URL of the image
+    softRef.getDownloadURL().then(function (url) {
+      // Once we have the download URL, we set it to our img element
+      //document.querySelector('img').src = url;
+      var soft = document.getElementById('soft');
+      soft.src = url;
+    }).catch(function (error) {
+      console.error(error);
+    });
+    // Once the sign in completed, we get the download URL of the image
+    uberRef.getDownloadURL().then(function (url) {
+      // Once we have the download URL, we set it to our img element
+      //document.querySelector('img').src = url;
+      var uber = document.getElementById('uber');
+      uber.src = url;
+    }).catch(function (error) {
+      console.error(error);
+    });
+    // Once the sign in completed, we get the download URL of the image
+    ecoRef.getDownloadURL().then(function (url) {
+      // Once we have the download URL, we set it to our img element
+      //document.querySelector('img').src = url;
+      var eco = document.getElementById('eco');
+      eco.src = url;
+    }).catch(function (error) {
+      console.error(error);
+    });
+    // Once the sign in completed, we get the download URL of the image
+    cloudRef.getDownloadURL().then(function (url) {
+      // Once we have the download URL, we set it to our img element
+      //document.querySelector('img').src = url;
+      var cloud = document.getElementById('cloud');
+      cloud.src = url;
+    }).catch(function (error) {
+      console.error(error);
+    });
+    // Once the sign in completed, we get the download URL of the image
+    boneRef.getDownloadURL().then(function (url) {
+      // Once we have the download URL, we set it to our img element
+      //document.querySelector('img').src = url;
+      var bone = document.getElementById('bone');
+      bone.src = url;
+    }).catch(function (error) {
+      console.error(error);
+    });
+    // Once the sign in completed, we get the download URL of the image
+    kaoRef.getDownloadURL().then(function (url) {
+      // Once we have the download URL, we set it to our img element
+      //document.querySelector('img').src = url;
+      var kao = document.getElementById('kao');
+      kao.src = url;
+    }).catch(function (error) {
+      console.error(error);
+    });
+  </script>
+
+  <script>
+    function scrollWin() {
+      window.scrollTo(0, 0);
+    }
+
+    function smallFunction() {
+      document.getElementById("demo").style.fontSize = "10px";
+      document.getElementById("demo1").style.fontSize = "10px";
+      document.getElementById("demo2").style.fontSize = "10px";
+      document.getElementById("demo3").style.fontSize = "10px";
+    }
+
+    function midFunction() {
+      document.getElementById("demo").style.fontSize = "16px";
+      document.getElementById("demo1").style.fontSize = "16px";
+      document.getElementById("demo2").style.fontSize = "16px";
+      document.getElementById("demo3").style.fontSize = "16px";
+    }
+
+    function bigFunction() {
+      document.getElementById("demo").style.fontSize = "20px";
+      document.getElementById("demo1").style.fontSize = "20px";
+      document.getElementById("demo2").style.fontSize = "20px";
+      document.getElementById("demo3").style.fontSize = "20px";
+    }
+  </script>
+
+</head>
+
+<body>
+  <div>
+    <ul>
+      <li><a class="active" href="https://www.bnext.com.tw">Home</a></li>
+      <li><a href="https://www.bnext.com.tw/articles">News</a></li>
+      <li><a href="http://www.shopbnextmedia.com/categories/business-next">Shop</a></li>
+      <li style="float:right"><a href="http://en.bnext.com.tw">About</a></li>
+    </ul>
+  </div>
+  <div style="padding:20px;margin-top:30px;">
+    <div>
+      <div>
+        <h1>IBM力挺，全球最大區塊鏈聯盟Hyperledger會員突破122名
+          <a href="https://line.me/zh-hant/"><img id='line' style="padding-right: 10px;float:right;width:42px;height:42px;" alt="用LINE傳送" /></a>
+          <a href="https://www.facebook.com/?locale=zh_TW"><img id='facebook' style="padding-right: 10px;float:right;width:42px;height:42px;" alt="用facebook_like傳送" /></a>
+        </h1>
+      </div>
+      <div>
+        <p class="normal">by 翁書婷 2017.03.10</p>
+      </div>
+      <button class="button button2" style="left: 1%;bottom: 100px;" onclick="smallFunction()">小</button>
+      <button class="button button2" style="left: 1%;bottom: 155px;" onclick="midFunction()">中</button>
+      <button class="button button2" style="left: 1%;bottom: 210px;" onclick="bigFunction()">大</button>
+      <div>
+        <img class="ibm" id="ibm" alt="ibm"><br>
+      </div>
+      <div class="floating-box-ad">
+        <p style="text-align: center;color: gray;">廣告<br></p>
+        <a href="http://www.nccu.edu.tw"><img id="mynccu" style="width:100%;height:auto;" alt="我的政大" /></a>
+      </div>
+      <div>
+        <p class="border-left article"><em>IBM雲端運算部門傑出工程師暨開放技術首席技術長菲力斯（Christopher Ferris）指出2016年是產業界學習、接納、與試驗區塊鏈的一年，2017年則是區塊鏈應用落實年，目前還是以金融業者興趣最大。</em></p>
+      </div>
+    </div>
+    <div>
+      <div class="floating-box-right">
+        <h2 class="right" style="color: black">熱門文章</h2>
+
+        <div style="border-bottom: 1px solid white;"></div>
+
+        <a href="https://www.bnext.com.tw/article/43534/3-techniques-will-have-chance-to-relplace-wifi">
+          <div class="floating-box-left">
+            <p style="font-size:200%;color: royalblue;">1</p>
+          </div>
+          <h3 style="text-align: left;color: black">WiFi將被淘汰，這3種新興技術有望取代WiFi地位</h3>
+        </a>
+
+        <div style="border-bottom: 1px solid gray;"></div>
+
+        <a href="https://www.bnext.com.tw/article/43451/bill-gates-would-choose-these-to-startup">
+          <div class="floating-box-left">
+            <p style="font-size:200%;color: royalblue;">2</p>
+          </div>
+          <h3 style="text-align: left;color: black">比爾·蓋茲：如果再次輟學創業，我會選這三個領域</h3>
+        </a>
+
+        <div style="border-bottom: 1px solid gray;"></div>
+
+        <a href="https://www.bnext.com.tw/article/42036/english-writing-grammer-check-online-software-writefull">
+          <div class="floating-box-left">
+            <p style="font-size:200%;color: royalblue;">3</p>
+          </div>
+          <h3 style="text-align: left;color: black">英文寫作與英文文法檢查必備軟體！ Writefull 完全免費介面精美</h3>
+        </a>
+
+        <div style="border-bottom: 1px solid gray;"></div>
+
+        <a href="https://www.bnext.com.tw/article/40922/google-staff-how-to-work">
+          <div class="floating-box-left">
+            <p style="font-size:200%;color: royalblue;">4</p>
+          </div>
+          <h3 style="text-align: left;color: black">Google 員工是怎麼工作的？內部手冊大公開<br><br></h3>
+        </a>
+
+        <div style="border-bottom: 1px solid gray;"></div>
+
+        <a href="https://www.bnext.com.tw/article/43235/the-rise-of-%E2%80%8Achatbots-six-categories-in-chatbot-landscape">
+          <div class="floating-box-left">
+            <p style="font-size:200%;color: royalblue;">5</p>
+          </div>
+          <h3 style="text-align: left;color: black">聊天機器人到底在紅什麼？一次看懂聊天機器人市場版圖</h3>
+        </a>
+
+        <div style="border-bottom: 1px solid gray;"></div>
+
+        <a href="https://www.bnext.com.tw/article/43528/bmw-founded-100-years-ago">
+          <div class="floating-box-left">
+            <p style="font-size:200%;color: royalblue;">6</p>
+          </div>
+          <h3 style="text-align: left;color: black">巴伐利亞發動機製造廠已經創立100年了，現在我們習慣叫它BMW</h3>
+        </a>
+      </div>
+    </div>
+    <div>
+      <article>
+        <div>
+          <p class="first article" id="demo3"> <strong style="font-size:300%;">與</strong>比特幣、以太坊區塊鏈互別苗頭，IBM力挺Hyperledger區塊鏈聯盟。Hyperledger已經有122個會員，是全球最大的區塊鏈聯盟。<br><br></p>
+        </div>
+        <div>
+          <iframe src="https://www.youtube.com/embed/VkZqqyOl5JU" allowfullscreen></iframe>
+        </div>
+        <div>
+          <h2>2017年是區塊鏈應用落實年</h2>
+          <div style="margin: auto; margin-right: 15%; width: 50%;text-align: left;">
+            <p class="article" id="demo"> Hyperledger專案技術指導委員會主席、IBM雲端運算部門傑出工程師暨開放技術首席技術長菲力斯（Christopher Ferris）指出2016年是產業界學習、接納、與試驗區塊鏈的一年，2017年則是區塊鏈應用落實年，目前還是以金融業者興趣最大。<br><br>不過區塊鏈不是僅能應用在金融領域，區塊鏈也可應用在健康照護
+              、能源與物聯網與政府治理（如電子身份認證）等領域中，應用非常多元。
+              <br><br> 舉例來說，Hyperledger正與沃爾瑪展開合作，探索區塊鏈在供應鏈端的應用可能。IBM亦將區塊鏈技術應用於自身財務與供應鏈管理上。IBM全球財務（IBM Global Financing，IGF)
+              導入區塊鏈技術，節省75%因交易糾紛而延滯的時間。
+            </p>
+            <br>
+          </div>
+          <h2>Hyperledger已為全球最大區塊鏈聯盟</h2>
+          <div style="margin: auto;margin-right: 15%;width: 50%;text-align: left;">
+            <p class="article" id="demo1"> IBM力挺的Hyperledger已經有122個會員，是全球最大的區塊鏈聯盟。我們從Hyperledger的會員成長速度，可看出其重要性。「Hyperledger會員數一年內就成長了3倍，是Linux所有計劃中成長最快的。其中20個會員來自中國，25%來自亞太地區。」菲力斯說。<br><br>Hyperledger聯盟雖然正快速擴張，但仍然遭遇不少挑戰，最大的挑戰是基礎標準的制定及資源整合，菲力斯就指出，「區塊鏈技術本身很具顛覆性，但這技術要成長茁壯，要企業共同合作，以生態系的概念一起成長，不是IBM單打獨鬥就行。」
+            </p>
+            <br>
+          </div>
+          <h2>Hyperledger三大開放原則</h2>
+          <div style="margin: auto;margin-right: 15%;width: 50%;text-align: left;">
+            <p class="article" id="demo2"> 為了讓Hyperledger能成為區塊鏈的基礎標準，IBM力推開放源碼（Open Source）開放標準（Open Standard）與開放治理（open governance）等三大開放原則。<br><br> 「這樣可以避免區塊鏈技術被單一廠商所掌控，降低各方介接區塊鏈系統的資源，以此為根基推動區塊鏈在產業界的應用。」台灣IBM公司技術長暨業務副總經理徐文暉表示。<br>
+              <br> 有鑒於比特幣的區塊鏈曾因被駭而損失慘重，IBM更加重視區塊鏈的安全防護。IBM大中華區系統事業部主機技術支持總監應康勇指出：「IBM LinuxONE獨家的安全服務容器（Secure Services Container）技術和防竄改硬體安全模組（Hardware
+              Security Module，HSM），具備業界僅有的三大功能，包括加密金鑰防護、使用者認證防護、惡意軟體防護，協助企業以兼具安全、開放的核心系統實踐區塊鏈應用。」
+            </p>
+            <br> <br><br>
+          </div>
+        </div>
+      </article>
+
+      <div style="width: 70%;margin: auto;">
+        <div>
+          <h3 class="rec">您可能還會想看</h3><br>
+
+          <div class="floating-box">
+            <a href="https://www.bnext.com.tw/article/42001/santander-morgan-stanley-quit-blockchain"><img id="bone" style="width:100%;height:auto;" alt="骨牌效應" />
+              <p style="text-align: left;color: black">骨牌效應？繼高盛之後，傳摩根士丹利也將拋棄區塊鏈組織R3</p>
+            </a>
+          </div>
+          <div class="floating-box">
+            <a href="https://www.bnext.com.tw/article/43086/cloud-integrated-service-is-the-key-to-shorten-time"><img id="cloud" style="width:100%;height:auto;" alt="雲端導入" />
+              <p style="text-align: left;color: black">雲端導入 從6個月降到30分鐘的關鍵<br><br></p>
+            </a>
+          </div>
+          <div class="floating-box">
+            <a href="https://www.bnext.com.tw/article/40359/BN-2016-07-27-172507-40"><img id="dtco" style="width:100%;height:auto;" alt="DTCO" />
+              <p style="text-align: left;color: black">區塊鏈新創DTCO獲國泰創投投資，進攻日本<br><br></p>
+            </a>
+          </div>
+          <div class="floating-box">
+            <a href="https://www.bnext.com.tw/article/41600/ibm-softlayer-help-companies-to-build-cloud-e-commerce-service"><img id="soft" style="width:100%;height:auto;" alt="SoftLayer" />
+              <p style="text-align: left;color: black;">IBM SoftLayer助企業打造雲端電商服務，迎向全球2兆美元電商市場</p>
+            </a>
+          </div>
+          <div class="floating-box">
+            <a href="https://www.bnext.com.tw/article/29737/BN-ARTICLE-29737"><img id="eco" style="width:100%;height:auto;" alt="經濟部雲端測試平" />
+              <p style="text-align: left;color: black">經濟部雲端測試平台進入第二階段，開放企業採用<br><br></p>
+            </a>
+          </div>
+          <div class="floating-box">
+            <a href="https://www.bnext.com.tw/article/41963/goldman-sachs-drops-out-of-r3-blockchain-group"><img id="kao" style="width:100%;height:auto;" alt="高盛宣布退出" />
+              <p style="text-align: left;color: black">想推自家版本？高盛宣布退出區塊鏈聯盟R3<br><br></p>
+            </a>
+          </div>
+          <div class="floating-box">
+            <a href="https://www.bnext.com.tw/article/38503/BN-2016-01-18-151200-178"><img id="kick" style="width:100%;height:auto;" alt="Kickstarter" />
+              <p style="text-align: left;color: black">拆解群募平台Kickstarter：嚴格控管上架，後發先至贏得市場</p>
+            </a>
+          </div>
+          <div class="floating-box">
+            <a href="https://www.bnext.com.tw/article/34859/BN-ARTICLE-34859"><img id="uber" style="width:100%;height:auto;" alt="Uber" />
+              <p style="text-align: left;color: black">Uber會是2015年最閃亮的IPO明星嗎？<br><br></p>
+            </a>
+          </div>
+          <div class="floating-box">
+            <a href="https://www.bnext.com.tw/article/32285/BN-ARTICLE-32285"><img id="ibmre" style="width:100%;height:auto;" alt="IBM重新布局" />
+              <p style="text-align: left;color: black">雲走的很快，IBM重新布局人事急追<br><br></p>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h3 class="rec">留言</h3><br>
+          <table>
+            <tr>
+              <td>小明</td>
+              <td>獲得新知識了</td>
+              <td>2017/03/10</td>
+            </tr>
+            <tr>
+              <td>大美</td>
+              <td>區區塊鏈真的是現在的趨勢啊</td>
+              <td>2017/03/12</td>
+            </tr>
+            <tr>
+              <td>阿華</td>
+              <td>這是潮流</td>
+              <td>2017/03/11</td>
+            </tr>
+          </table>
+        </div>
+        <div>
+
+          <h3 class="rec">留言給我</h3>
+
+          <div style="margin:auto">
+
+            <h4 style="margin-left: 50%">作者</h4>
+
+              <input style="margin-left: 44%;width: 20%;margin-right: 44%" type="text" id="name"><br>
+
+              <h4 style="margin-left: 50%">留言</h4>
+
+                <textarea style="margin-left: 36%;width: 35%;margin-right: 36%" name="comment" rows="5" cols="45" id="commend"></textarea><br><br>
+
+                <button class="buttonsend button2"  style="margin-left: 50%" id="btn" onclick="uploadComment()">送出</button>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="button button1" style="right: 1%;bottom: 2%;" onclick="scrollWin()">Top</button>
+
+</body>
+
+</html>
