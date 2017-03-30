@@ -45,7 +45,7 @@
         }
       }
       else {
-        afuRef.putString(document.getElementById("name").value + "\n\n" + document.getElementById("commend").value).then(function (snapshot) {
+        afuRef.putString(document.getElementById("name").value + "\r\n\r\n" + document.getElementById("commend").value).then(function (snapshot) {
           console.log("上傳成功");
           document.getElementById("name").value = "";
           document.getElementById("commend").value = "";
